@@ -45,7 +45,8 @@
 body {
   /*corpo do site*/
   background: var(--bg-url) no-repeat top center/cover; /*foi definido o fundo do site(que é alterado de acordo com o var), colocado para não repetir, alocado para o centro e para cobrir todo o espaço visível independente de tamanho*/
-  height: 100vh; /*comando para o background cobrir 100% da altura do viewport
+  transition: background 0.2s;
+  height: 100vh; /*comando para o background cobrir 100% da altura do viewport*/
 }
 
 body * {
@@ -97,8 +98,11 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch button {
@@ -113,6 +117,8 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
 }
 
 /* links lista */
@@ -186,5 +192,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
