@@ -1,39 +1,61 @@
-* { /*As propriedades aqui se aplicam a todos os elementos*/
+* {
+  /*As propriedades aqui se aplicam a todos os elementos*/
   margin: 0; /*elementos não vão ter margem que o navegador aplica*/
   padding: 0; /*também não vão ter preenchimento*/
-  box-sizing: border-box;/*a medida do tamanho da caixa é feita através da borda*/
+  box-sizing: border-box; /*a medida do tamanho da caixa é feita através da borda*/
 }
 
-:root{ /*modo escuro*/
+:root {
+  /*modo escuro*/
   --text-color: white; /*cor do texto */
-  --bg-url: url(./assets/bg-mobile.jpg);/*imagem de fundo*/
-  --stroke-color: rgba(255,255,255, 0.5);/*borda da lista e botão*/
-  --surface-color: rgba(255,255,255,0.05);/*background lista*/
-  --surface-color-hover: rgba(255,255,255,0.1);/*background quando passa o mouse*/
-  --highlight-color: rgba(255, 255, 255, 0.1);/*background quando passa o mouse nas midias sociais*/
-  --switch-bg-url: url(./assets/moon-stars.svg);/*imagem botão*/
+  --bg-url: url(./assets/bg-mobile.jpg); /*imagem de fundo*/
+  --stroke-color: rgba(255, 255, 255, 0.5); /*borda da lista e botão*/
+  --surface-color: rgba(255, 255, 255, 0.05); /*background lista*/
+  --surface-color-hover: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /*background quando passa o mouse*/
+  --highlight-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /*background quando passa o mouse nas midias sociais*/
+  --switch-bg-url: url(./assets/moon-stars.svg); /*imagem botão*/
 }
 
-.light{ /*modo claro*/ /*os nomes depois de -- podem ser alterados da forma que quiser*/
+.light {
+  /*modo claro*/ /*os nomes depois de -- podem ser alterados da forma que quiser*/
   --text-color: black; /*cor do texto */
   --bg-url: url(./assets/bg-mobile-light.jpg); /*imagem de fundo*/
-  --stroke-color: rgba(0,0,0, 0.5); /*borda da lista e botão*/
-  --surface-color: rgba(0,0,0,0.05); /*background lista*/
-  --surface-color-hover: rgba(0,0,0,0.1); /*background quando passa o mouse*/
-  --highlight-color: rgba(0, 0, 0, 0.1); /*background quando passa o mouse nas midias sociais*/
+  --stroke-color: rgba(0, 0, 0, 0.5); /*borda da lista e botão*/
+  --surface-color: rgba(0, 0, 0, 0.05); /*background lista*/
+  --surface-color-hover: rgba(0, 0, 0, 0.1); /*background quando passa o mouse*/
+  --highlight-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /*background quando passa o mouse nas midias sociais*/
   --switch-bg-url: url(./assets/sun.svg); /*imagem botão*/
 }
 
-body { /*corpo do site*/
+body {
+  /*corpo do site*/
   background: var(--bg-url) no-repeat top center/cover; /*foi definido o fundo do site(que é alterado de acordo com o var), colocado para não repetir, alocado para o centro e para cobrir todo o espaço visível independente de tamanho*/
+  height: 100vh; /*comando para o background cobrir 100% da altura do viewport
 }
 
-body * { /*regra universal para todo o corpo do site*/
+body * {
+  /*regra universal para todo o corpo do site*/
   font-family: "Inter", sans-serif; /*fonte do site*/
-  color: var(--text-color) /*cor da fonte(alterado pelo var)*/
+  color: var(--text-color); /*cor da fonte(alterado pelo var)*/
 }
 
-#container { /*aqui defini o tamanho da caixa onde todos os elementos estão(o nome container pode ser alterado no HTML*/
+#container {
+  /*aqui defini o tamanho da caixa onde todos os elementos estão(o nome container pode ser alterado no HTML*/
   margin: 56px auto 0px;
   width: 100%;
   max-width: 580px;
@@ -104,7 +126,7 @@ ul {
   padding: 24px 0px;
 }
 
-ul li a{
+ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,11 +170,21 @@ ul li a:hover {
 }
 
 #social-links a:hover {
-  background: var(--highlight-color); 
+  background: var(--highlight-color);
 }
 
 footer {
   padding: 24px 0;
   text-align: center;
-  
+}
+
+/* media queries*/
+@media (min-width: 700px) { /*mudar a imagem de fundo de acordo com o dispositivo*/
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
