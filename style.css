@@ -35,7 +35,8 @@ body * { /*regra universal para todo o corpo do site*/
 
 #container { /*aqui defini o tamanho da caixa onde todos os elementos estão(o nome container pode ser alterado no HTML*/
   margin: 56px auto 0px;
-  width: 360px;
+  width: 100%;
+  max-width: 580px;
   padding: 0 24px;
 }
 
