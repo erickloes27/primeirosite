@@ -1,0 +1,157 @@
+* { /*As propriedades aqui se aplicam a todos os elementos*/
+  margin: 0; /*elementos não vão ter margem que o navegador aplica*/
+  padding: 0; /*também não vão ter preenchimento*/
+  box-sizing: border-box;/*a medida do tamanho da caixa é feita através da borda*/
+}
+
+:root{ /*modo escuro*/
+  --text-color: white; /*cor do texto */
+  --bg-url: url(./assets/bg-mobile.jpg);/*imagem de fundo*/
+  --stroke-color: rgba(255,255,255, 0.5);/*borda da lista e botão*/
+  --surface-color: rgba(255,255,255,0.05);/*background lista*/
+  --surface-color-hover: rgba(255,255,255,0.1);/*background quando passa o mouse*/
+  --highlight-color: rgba(255, 255, 255, 0.1);/*background quando passa o mouse nas midias sociais*/
+  --switch-bg-url: url(./assets/moon-stars.svg);/*imagem botão*/
+}
+
+.light{ /*modo claro*/ /*os nomes depois de -- podem ser alterados da forma que quiser*/
+  --text-color: black; /*cor do texto */
+  --bg-url: url(./assets/bg-mobile-light.jpg); /*imagem de fundo*/
+  --stroke-color: rgba(0,0,0, 0.5); /*borda da lista e botão*/
+  --surface-color: rgba(0,0,0,0.05); /*background lista*/
+  --surface-color-hover: rgba(0,0,0,0.1); /*background quando passa o mouse*/
+  --highlight-color: rgba(0, 0, 0, 0.1); /*background quando passa o mouse nas midias sociais*/
+  --switch-bg-url: url(./assets/sun.svg); /*imagem botão*/
+}
+
+body { /*corpo do site*/
+  background: var(--bg-url) no-repeat top center/cover; /*foi definido o fundo do site(que é alterado de acordo com o var), colocado para não repetir, alocado para o centro e para cobrir todo o espaço visível independente de tamanho*/
+}
+
+body * { /*regra universal para todo o corpo do site*/
+  font-family: "Inter", sans-serif; /*fonte do site*/
+  color: var(--text-color) /*cor da fonte(alterado pelo var)*/
+}
+
+#container { /*aqui defini o tamanho da caixa onde todos os elementos estão(o nome container pode ser alterado no HTML*/
+  margin: 56px auto 0px;
+  width: 360px;
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  margin: auto;
+}
+
+#profile p {
+  font-weight: 00;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: 1px solid var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+/* links lista */
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0px;
+}
+
+ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 32px 0;
+
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color); 
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  
+}
